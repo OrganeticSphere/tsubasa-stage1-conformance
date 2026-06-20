@@ -1,0 +1,303 @@
+{
+  "manifest_version": "0.1",
+  "repository": "OrganeticSphere/tsubasa-stage1-conformance",
+  "scope": "tsubasa-stage1-public-conformance",
+  "stage": "stage1",
+  "owner": "AI Verification PM / AI Verification 2.0",
+  "technical_verifier": "Tobi Compiler / Architect",
+  "source_extension_policy": ".tsubasa",
+  "h_policy": {
+    "required_for_v0_1_conformance": false,
+    "meaning": "compatibility_identity_only",
+    "not_proof": true,
+    "not_truth": true,
+    "not_consensus": true
+  },
+  "expected_output_policy": {
+    "real_tobi_run_required": true,
+    "pending_marker": "PENDING_REAL_TOBI_RUN",
+    "verified_marker": "VERIFIED_WITH_TOBI",
+    "fake_outputs_forbidden": true
+  },
+  "cases": [
+    {
+      "case_id": "accept.basic_bind_001",
+      "class": "accept",
+      "source_path": "corpus/accept/basic_bind_001.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/accept/basic_bind_001.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06"
+        }
+      }
+    },
+    {
+      "case_id": "accept.basic_bind_002",
+      "class": "accept",
+      "source_path": "corpus/accept/basic_bind_002.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/accept/basic_bind_002.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "bind(ID(y), DEC(2), ID(y))",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "37205233a0fffc2592fa3cc385356b10d13e73af3332dd75be01a294e71b9c79"
+        }
+      }
+    },
+    {
+      "case_id": "accept.atomic_sequence_001",
+      "class": "accept",
+      "source_path": "corpus/accept/atomic_sequence_001.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/accept/atomic_sequence_001.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "seq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96"
+        }
+      }
+    },
+    {
+      "case_id": "reject.invented_syntax_001",
+      "class": "reject",
+      "source_path": "corpus/reject/invented_syntax_001.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/reject/invented_syntax_001.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 1,
+        "canonical_ascii": null,
+        "diagnostic": {
+          "code": "E023",
+          "message": "expected identifier after 'let'",
+          "span": {
+            "start": 3,
+            "end": 4
+          },
+          "observed_stderr": "Error: E023: expected identifier after 'let' (span 3..4)"
+        },
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": null
+        }
+      }
+    },
+    {
+      "case_id": "reject.malformed_decimal_001",
+      "class": "reject",
+      "source_path": "corpus/reject/malformed_decimal_001.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/reject/malformed_decimal_001.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 1,
+        "canonical_ascii": null,
+        "diagnostic": {
+          "code": "E013",
+          "message": "invalid number literal",
+          "span": {
+            "start": 8,
+            "end": 11
+          },
+          "observed_stderr": "Error: E013: invalid number literal (span 8..11)"
+        },
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": null
+        }
+      }
+    },
+    {
+      "case_id": "equivalence.decimal_convergence.decimal_1",
+      "class": "equivalence",
+      "source_path": "corpus/equivalence/decimal_convergence/decimal_1.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/equivalence/decimal_convergence/decimal_1.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06"
+        }
+      },
+      "family": "decimal_convergence",
+      "role": "variant"
+    },
+    {
+      "case_id": "equivalence.decimal_convergence.decimal_1_0",
+      "class": "equivalence",
+      "source_path": "corpus/equivalence/decimal_convergence/decimal_1_0.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/equivalence/decimal_convergence/decimal_1_0.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06"
+        }
+      },
+      "family": "decimal_convergence",
+      "role": "variant"
+    },
+    {
+      "case_id": "equivalence.decimal_convergence.decimal_01_000",
+      "class": "equivalence",
+      "source_path": "corpus/equivalence/decimal_convergence/decimal_01_000.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/equivalence/decimal_convergence/decimal_01_000.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06"
+        }
+      },
+      "family": "decimal_convergence",
+      "role": "variant"
+    },
+    {
+      "case_id": "equivalence.sequence_skin_convergence.semicolon",
+      "class": "equivalence",
+      "source_path": "corpus/equivalence/sequence_skin_convergence/semicolon.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/equivalence/sequence_skin_convergence/semicolon.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "seq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96"
+        }
+      },
+      "family": "sequence_skin_convergence",
+      "role": "variant"
+    },
+    {
+      "case_id": "equivalence.sequence_skin_convergence.triangle",
+      "class": "equivalence",
+      "source_path": "corpus/equivalence/sequence_skin_convergence/triangle.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/equivalence/sequence_skin_convergence/triangle.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "seq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96"
+        }
+      },
+      "family": "sequence_skin_convergence",
+      "role": "variant"
+    },
+    {
+      "case_id": "idempotence.basic_bind_001",
+      "class": "idempotence",
+      "source_path": "corpus/idempotence/basic_bind_001/source.tsubasa",
+      "expected_status": "PENDING_REAL_TOBI_RUN",
+      "expected": null,
+      "family": "basic_bind_001",
+      "role": "source"
+    },
+    {
+      "case_id": "determinism.basic_bind_001",
+      "class": "determinism",
+      "source_path": "corpus/determinism/basic_bind_001/source.tsubasa",
+      "expected_status": "VERIFIED_WITH_TOBI",
+      "verified_with": {
+        "tobi_release": "stage1-tobi-validator-v0.7.0",
+        "platform": "windows-x86_64 (Microsoft Windows 10.0.26200)",
+        "command": "tobi.exe canon corpus/determinism/basic_bind_001/source.tsubasa",
+        "binary_sha256": "946f433f98874a9cff5abbacc6c16d8ed49dbd8f41b69877746460fb6a266672"
+      },
+      "expected": {
+        "exit_code": 0,
+        "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+        "diagnostic": null,
+        "h": {
+          "required": false,
+          "meaning": "compatibility_identity_only",
+          "value": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06"
+        }
+      },
+      "family": "basic_bind_001",
+      "role": "source"
+    }
+  ]
+}
