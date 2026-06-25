@@ -17,10 +17,33 @@ Status: release-candidate scaffold, not yet tagged.
 - 11 cases are marked `VERIFIED_WITH_TOBI`.
 - `idempotence.basic_bind_001` remains `PENDING_REAL_TOBI_RUN`.
 
-The idempotence case remains pending because direct re-input of canonical ASCII produced ordinary call-syntax canonicalization rather than the original canonical form/hash under the verified release and command context.
+The idempotence category is intentionally reserved in v0.1. The current
+idempotence case remains `PENDING_REAL_TOBI_RUN` because direct re-input of
+canonical ASCII produced a different canonical form and hash under the verified
+v0.7.0 context. This is preserved as a limitation, not hidden as a pass. v0.1
+does not claim verified idempotence coverage.
 
 ## Boundary
 
 This repository does not contain Tobi validator source, validator binaries, private fixtures, private golden corpus, `.tobi-sync`, or Stage 2 internals.
 
 `_h` values, where present, are optional version-bound compatibility identities only. They are not proof, truth, consensus, or certification.
+
+## Release readiness checklist
+
+- [x] Structure checks pass.
+- [x] The manifest has 12 cases.
+- [x] 11 cases are verified with real Tobi
+  `stage1-tobi-validator-v0.7.0`.
+- [x] 1 idempotence case remains pending.
+- [x] No private fixtures are included.
+- [x] No private golden corpus is included.
+- [x] No `.tbs` files are included.
+- [x] No `.tobi-sync` files are included.
+- [x] No validator binary is included.
+- [x] No private distribution logic is included.
+- [x] No Stage 2 internals are included.
+- [x] `_h` remains optional compatibility identity only.
+- [x] Coverage limitations are documented.
+- [x] The trademark and naming guard is included.
+- [x] The structure workflow supports pushes to both `main` and `master`.
