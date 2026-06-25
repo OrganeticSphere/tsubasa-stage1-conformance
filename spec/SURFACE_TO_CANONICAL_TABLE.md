@@ -6,7 +6,7 @@ This table contains only values already verified in
 ## Accepted surfaces
 
 | Case | Surface source | Verified canonical output |
-|---|---|---:|---|
+|---|---|---|
 | `accept.basic_bind_001` | `let x = 1 in x` | `bind(ID(x), DEC(1), ID(x))` |
 | `accept.basic_bind_002` | `let y = 2 in y` | `bind(ID(y), DEC(2), ID(y))` |
 | `accept.atomic_sequence_001` | `atomic{ let x = 1 in x; let y = 2 in y }` | `seq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])` |
