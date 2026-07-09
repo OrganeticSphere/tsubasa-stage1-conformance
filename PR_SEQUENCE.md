@@ -1,5 +1,10 @@
 # PR Sequence for v0.1
 
+Status: completed for the v0.1 release-candidate flow. The `v0.1.0` tag
+was created before the README governance wording cleanup now present on
+`master`. Do not move `v0.1.0`; use `v0.1.1` for the release-state
+cleanup.
+
 ## PR 0 — Repository bootstrap
 
 Create governance, README, security policy, Apache-2.0 license, and empty structure.
@@ -34,8 +39,8 @@ Stabilize v0.1 suite classes after verified output evidence exists.
 
 ## PR 8 — Handshake with public Tobi Validator docs
 
-Cross-link this repository with the public Tobi Validator wrapper/docs and evaluation access flow.
+Completed: cross-link this repository with the public Tobi Validator wrapper/docs and evaluation access flow.
 
 ## PR 9 — v0.1 release candidate
 
-Final audit, release notes, license confirmation, and tag `v0.1.0`.
+Completed: final audit, release notes, license confirmation, and tag `v0.1.0`.

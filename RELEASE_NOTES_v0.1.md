@@ -1,6 +1,11 @@
-# Release Notes v0.1 Draft
+# Release Notes v0.1
 
-Status: release-candidate scaffold, not yet tagged.
+Status: release-candidate corpus. The `v0.1.0` tag exists and points to
+the initial v0.1 release-candidate commit. Current `master` contains
+post-tag README governance wording cleanup.
+
+Release hygiene policy: do not move `v0.1.0`; publish any governance or
+release-state cleanup as `v0.1.1` with no corpus semantics changes.
 
 ## Included
 
