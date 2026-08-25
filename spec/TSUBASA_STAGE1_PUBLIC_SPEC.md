@@ -1,8 +1,8 @@
 # Tsubasa Public Spec — v0.1 Conformance Corridor
 
-**Status:** public-safe v0.1 scaffold  
-**Scope:** narrow v0.1 conformance corridor; not the complete Tsubasa language reference  
-**File extension:** `.tsubasa`  
+**Status:** public-safe v0.1 scaffold<br>
+**Scope:** narrow v0.1 conformance corridor; not the complete Tsubasa language reference<br>
+**File extension:** `.tsubasa`<br>
 **Physical filename:** retained for link stability
 
 This document describes the public-safe v0.1 authoring and conformance corridor for Tsubasa examples in this repository.

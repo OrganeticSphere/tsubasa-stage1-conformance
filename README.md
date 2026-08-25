@@ -1,9 +1,9 @@
 # Tsubasa Conformance Corpus
 
-**Status:** v0.1.0 public seed corpus — published  
-**Maintainer:** OrganeticSphere  
-**Public display name:** Tsubasa Conformance Corpus  
-**Repository slug:** `tsubasa-stage1-conformance` — retained for link stability  
+**Status:** v0.1.0 public seed corpus — published<br>
+**Maintainer:** OrganeticSphere<br>
+**Public display name:** Tsubasa Conformance Corpus<br>
+**Repository slug:** `tsubasa-stage1-conformance` — retained for link stability<br>
 **Scope:** public-safe `.tsubasa` examples and version-bound conformance evidence for Tobi Validator
 
 This repository is the public Tsubasa conformance and evidence corridor for reasoning artifacts validated by **Tobi Validator**.
@@ -228,6 +228,7 @@ Useful public links:
 
 - [Tobi Validator](https://github.com/OrganeticSphere/tobi-validator)
 - [Organetic documentation](https://organetic.ai/docs.html)
+- [Tsubasa conformance documentation](https://organetic.ai/docs-tsubasa-conformance.html)
 - [Evaluation access](https://organetic.ai/eval-access.html)
 - [GitHub Actions guide](https://organetic.ai/docs-github-actions.html)
 - [GitLab CI/CD component guide](https://organetic.ai/docs-gitlab-component.html)
