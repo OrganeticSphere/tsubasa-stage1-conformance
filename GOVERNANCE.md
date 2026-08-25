@@ -2,7 +2,9 @@
 
 ## Primary owner
 
-AI Verification PM / AI Verification 2.0 owns this repository as a Stage 1 public trust and openness surface.
+AI Verification PM / AI Verification 2.0 owns this repository as the public **Tsubasa Conformance Corpus** trust and openness surface.
+
+`Stage 1` remains an internal engineering, roadmap, compatibility, and historical coordinate; it is not the current public product name.
 
 ## Technical verifier
 
@@ -13,7 +15,7 @@ This verifier role is limited to:
 - confirming public-safe examples;
 - confirming canonical output from real runs;
 - confirming diagnostic expectations from real runs;
-- confirming optional version-bound `_h` values from real runs;
+- confirming optional version-bound `_h` compatibility identities from real runs;
 - identifying cases that must remain pending.
 
 It does not transfer ownership of the repository to Tobi Compiler.
