@@ -1,9 +1,10 @@
 # Tsubasa Conformance Corpus — Evidence Protocol v0.2
 
-**Status:** DRAFT EVIDENCE PROTOCOL — no release/tag authorization  
-**Scope:** Linux x86_64 evidence expansion for the existing v0.1 public case set  
-**Public display name:** Tsubasa Conformance Corpus  
-**Validator product:** Tobi Validator  
+**Status:** DRAFT EVIDENCE PROTOCOL — no release/tag authorization<br>
+**Scope:** Linux x86_64 evidence expansion for the existing v0.1 public case set<br>
+**Public display name:** Tsubasa Conformance Corpus<br>
+**Validator product:** Tobi Validator<br>
+**Validator category:** Reasoning Artifact Validator<br>
 **Pinned validator release identity:** `stage1-tobi-validator-v0.7.0`
 
 ## 1. Purpose
