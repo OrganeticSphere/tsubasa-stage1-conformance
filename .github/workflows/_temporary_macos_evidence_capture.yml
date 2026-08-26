@@ -1,0 +1,214 @@
+name: temporary-macos-evidence-capture
+
+on:
+  push:
+    branches:
+      - evidence/v0.2-macos-conformance
+    paths:
+      - .github/workflows/_temporary_macos_evidence_capture.yml
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: macos-14
+    timeout-minutes: 15
+    env:
+      TOBI_MACOS_EVIDENCE_ARCHIVE_URL: ${{ secrets.TOBI_MACOS_EVIDENCE_ARCHIVE_URL }}
+      TOBI_MACOS_EVIDENCE_SIDECAR_URL: ${{ secrets.TOBI_MACOS_EVIDENCE_SIDECAR_URL }}
+      EXPECTED_OUTER_SHA256: 425ea8f11b3aefcd75cb17101fedd2ed0541d6bfc73162b77ca47694ef25cb16
+      RELEASE_ASSET_NAME: macos-arm64-release-archive.zip
+      VALIDATOR_RELEASE: stage1-tobi-validator-v0.7.0
+
+    steps:
+      - name: Check out exact evidence source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Capture native macOS evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "$(uname -s)" != "Darwin" ]]; then
+            echo "ERROR: native Darwin runtime was not observed" >&2
+            exit 1
+          fi
+
+          architecture="$(uname -m)"
+          if [[ "$architecture" != "arm64" ]]; then
+            echo "ERROR: macos-14 did not provide the required native arm64 runtime" >&2
+            exit 1
+          fi
+
+          if [[ -z "$TOBI_MACOS_EVIDENCE_ARCHIVE_URL" || -z "$TOBI_MACOS_EVIDENCE_SIDECAR_URL" ]]; then
+            echo "ERROR: temporary release delivery secrets are unavailable" >&2
+            exit 1
+          fi
+
+          evidence_root="$RUNNER_TEMP/tobi-v02-macos-evidence"
+          outer_root="$evidence_root/outer"
+          release_root="$evidence_root/release"
+          capture_root="$evidence_root/capture"
+          archive_path="$evidence_root/$RELEASE_ASSET_NAME"
+          sidecar_path="$evidence_root/$RELEASE_ASSET_NAME.sha256"
+          mkdir -p "$outer_root" "$release_root" "$capture_root"
+
+          curl --fail --silent --show-error --location \
+            "$TOBI_MACOS_EVIDENCE_ARCHIVE_URL" \
+            --output "$archive_path"
+          curl --fail --silent --show-error --location \
+            "$TOBI_MACOS_EVIDENCE_SIDECAR_URL" \
+            --output "$sidecar_path"
+
+          (
+            cd "$evidence_root"
+            shasum -a 256 -c "$RELEASE_ASSET_NAME.sha256"
+          )
+
+          actual_outer_sha256="$(shasum -a 256 "$archive_path" | awk '{print $1}')"
+          if [[ "$actual_outer_sha256" != "$EXPECTED_OUTER_SHA256" ]]; then
+            echo "ERROR: outer release asset digest mismatch" >&2
+            exit 1
+          fi
+
+          ditto -x -k "$archive_path" "$outer_root"
+          payload_path="$(find "$outer_root" -type f -name '*.tar.gz' -print)"
+          if [[ -z "$payload_path" || "$payload_path" == *$'\n'* ]]; then
+            echo "ERROR: expected exactly one nested payload archive" >&2
+            exit 1
+          fi
+
+          payload_sidecar="$payload_path.sha256"
+          if [[ ! -f "$payload_sidecar" ]]; then
+            echo "ERROR: nested payload checksum sidecar is missing" >&2
+            exit 1
+          fi
+
+          (
+            cd "$(dirname "$payload_path")"
+            shasum -a 256 -c "$(basename "$payload_sidecar")"
+          )
+
+          payload_name="$(basename "$payload_path")"
+          payload_sha256="$(shasum -a 256 "$payload_path" | awk '{print $1}')"
+          sidecar_sha256="$(shasum -a 256 "$sidecar_path" | awk '{print $1}')"
+          tar -xzf "$payload_path" -C "$release_root"
+
+          tobi_path="$(find "$release_root" -type f -name tobi -print)"
+          if [[ -z "$tobi_path" || "$tobi_path" == *$'\n'* ]]; then
+            echo "ERROR: expected exactly one extracted Tobi executable" >&2
+            exit 1
+          fi
+          chmod +x "$tobi_path"
+          executable_sha256="$(shasum -a 256 "$tobi_path" | awk '{print $1}')"
+
+          macos_version="$(sw_vers -productVersion)"
+          macos_build="$(sw_vers -buildVersion)"
+          darwin_release="$(uname -r)"
+          darwin_version="$(uname -v)"
+          hardware_model="$(sysctl -n hw.model)"
+          python_version="$(python3 --version 2>&1)"
+
+          export architecture actual_outer_sha256 sidecar_sha256 payload_name
+          export payload_sha256 tobi_path executable_sha256 macos_version
+          export macos_build darwin_release darwin_version hardware_model
+          export python_version
+
+          python3 - "$capture_root/macos-runtime-provenance.json" <<'PY'
+          import datetime
+          import json
+          import os
+          import pathlib
+          import sys
+
+          output = pathlib.Path(sys.argv[1])
+          evidence = {
+              "capture_timestamp_utc": datetime.datetime.now(
+                  datetime.timezone.utc
+              ).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+              "execution_source_head": os.environ["GITHUB_SHA"],
+              "runtime_type": "GitHub-hosted macOS VM",
+              "runner_label": "macos-14",
+              "runner_image_os": os.environ.get("ImageOS", "NOT_RECORDED"),
+              "runner_image_version": os.environ.get("ImageVersion", "NOT_RECORDED"),
+              "macos_version": os.environ["macos_version"],
+              "macos_build": os.environ["macos_build"],
+              "darwin_kernel_release": os.environ["darwin_release"],
+              "darwin_kernel_version": os.environ["darwin_version"],
+              "architecture": os.environ["architecture"],
+              "hardware_model": os.environ["hardware_model"],
+              "python_version": os.environ["python_version"],
+              "validator_release": os.environ["VALIDATOR_RELEASE"],
+              "release_asset": os.environ["RELEASE_ASSET_NAME"],
+              "outer_asset_expected_sha256": os.environ["EXPECTED_OUTER_SHA256"],
+              "outer_asset_actual_sha256": os.environ["actual_outer_sha256"],
+              "outer_sidecar_sha256": os.environ["sidecar_sha256"],
+              "outer_sidecar_verified": True,
+              "nested_payload": os.environ["payload_name"],
+              "nested_payload_sha256": os.environ["payload_sha256"],
+              "nested_payload_sidecar_verified": True,
+              "executable_path": os.environ["tobi_path"],
+              "executable_sha256": os.environ["executable_sha256"],
+              "environment_policy": (
+                  "Fresh GitHub-hosted macOS VM; repository checkout used as "
+                  "source-only input; no environment dump retained."
+              ),
+          }
+          output.write_text(
+              json.dumps(evidence, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+          python3 "$GITHUB_WORKSPACE/tools/run_tobi_evidence_v0_2.py" \
+            --tobi "$tobi_path" \
+            --platform "macos-arm64" \
+            --validator-release "$VALIDATOR_RELEASE" \
+            --source-root "$GITHUB_WORKSPACE" \
+            --determinism-repetitions 3 \
+            --output "$capture_root/raw-evidence-v0.2-macos.json"
+
+          python3 - \
+            "$capture_root/macos-runtime-provenance.json" \
+            "$capture_root/raw-evidence-v0.2-macos.json" <<'PY'
+          import json
+          import pathlib
+          import sys
+
+          metadata_path = pathlib.Path(sys.argv[1])
+          raw_path = pathlib.Path(sys.argv[2])
+          metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+          raw = json.loads(raw_path.read_text(encoding="utf-8"))
+          transient_path = pathlib.Path(
+              raw["idempotence"]["second_run"]["source_path"]
+          )
+          metadata["idempotence_transient_path"] = str(transient_path)
+          metadata["idempotence_transient_deleted"] = not transient_path.exists()
+          if not metadata["idempotence_transient_deleted"]:
+              raise SystemExit("idempotence transient file was not deleted")
+          metadata_path.write_text(
+              json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+          (
+            cd "$capture_root"
+            shasum -a 256 \
+              macos-runtime-provenance.json \
+              raw-evidence-v0.2-macos.json \
+              > SHA256SUMS.txt
+          )
+
+      - name: Upload public-safe raw capture
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: macos-evidence-capture-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/tobi-v02-macos-evidence/capture/macos-runtime-provenance.json
+            ${{ runner.temp }}/tobi-v02-macos-evidence/capture/raw-evidence-v0.2-macos.json
+            ${{ runner.temp }}/tobi-v02-macos-evidence/capture/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 1
