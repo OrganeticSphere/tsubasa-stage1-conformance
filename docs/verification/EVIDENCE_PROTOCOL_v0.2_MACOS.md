@@ -1,9 +1,9 @@
 # Tsubasa Conformance Corpus — macOS Evidence Protocol v0.2
 
-**Status:** DRAFT EVIDENCE PROTOCOL — no release/tag authorization  
-**Scope:** macOS evidence for the existing 12-case public baseline  
-**Public display name:** Tsubasa Conformance Corpus  
-**Validator product:** Tobi Validator  
+**Status:** DRAFT EVIDENCE PROTOCOL — no release/tag authorization<br>
+**Scope:** macOS evidence for the existing 12-case public baseline<br>
+**Public display name:** Tsubasa Conformance Corpus<br>
+**Validator product:** Tobi Validator<br>
 **Pinned validator release identity:** `stage1-tobi-validator-v0.7.0`
 
 ## 1. Purpose
