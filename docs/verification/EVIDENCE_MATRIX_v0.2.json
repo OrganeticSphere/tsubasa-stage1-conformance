@@ -205,6 +205,955 @@
         },
         "transient_file_deleted": true
       }
+    },
+    {
+      "platform": "macos-arm64",
+      "architecture": "arm64",
+      "os": {
+        "system": "macOS",
+        "product_version": "14.8.7",
+        "build_version": "23J520",
+        "darwin_kernel_release": "23.6.0",
+        "darwin_kernel_version": "Darwin Kernel Version 23.6.0: Tue Apr 21 20:17:41 PDT 2026; root:xnu-10063.141.1.712.16~1/RELEASE_ARM64_VMAPPLE",
+        "hardware_model": "VirtualMac2,1"
+      },
+      "execution_timestamp_utc": "2026-08-26T02:26:11Z",
+      "evidence_source_head": "c0bf99d2b2bc04212e32c50ea51acc02dd58139e",
+      "execution_environment": {
+        "kind": "GitHub-hosted macOS VM",
+        "runner_label": "macos-14",
+        "runner_image_os": "macos14",
+        "runner_image_version": "20260629.0180.1",
+        "python_version": "Python 3.14.6",
+        "workflow_run_id": 32922703063,
+        "workflow_run_status": "completed",
+        "workflow_run_conclusion": "success"
+      },
+      "binary_provenance": {
+        "description": "Authorized released distribution delivered through temporary encrypted workflow secrets. No credential or private download URL was retained.",
+        "validator_release": "stage1-tobi-validator-v0.7.0",
+        "outer_asset_name": "macos-arm64-release-archive.zip",
+        "outer_asset_expected_sha256": "425ea8f11b3aefcd75cb17101fedd2ed0541d6bfc73162b77ca47694ef25cb16",
+        "outer_asset_actual_sha256": "425ea8f11b3aefcd75cb17101fedd2ed0541d6bfc73162b77ca47694ef25cb16",
+        "outer_sidecar_sha256": "b5f60bbd5382ddc20fdc1d8bc1667f89f34b78183ee6eb874b43d15a45450d2e",
+        "outer_sidecar_verified": true,
+        "nested_payload_name": "stage1-tobi-validator-v0.7.0-macos-arm64.tar.gz",
+        "nested_payload_sha256": "bf1323a35f41eb63bef84171f5ae72e607b71bf61bba6c4989fae78bc23f8ac3",
+        "nested_payload_sidecar_verified": true,
+        "executable_path": "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+        "executable_sha256": "b381a3bc5e026513a855919083fb7face3517d3b0b7e1a60aaca81839387317a"
+      },
+      "capture_artifact": {
+        "name": "macos-evidence-capture-c0bf99d2b2bc04212e32c50ea51acc02dd58139e",
+        "raw_capture_sha256": "b2a464ccc8b8723f44ce57f54a5b0b03a78aca9634b2bdee607f6c0005dc82ed",
+        "runtime_provenance_sha256": "07c26ccdc3c9539fedf5a10dd0e819ae1c71365007fd46934c1c07d9d60454d6",
+        "checksum_manifest_sha256": "ffcaa075f9e38131ee62ada0de0bd5da36a71b613b7d12cd44d1c47cb48fc08f",
+        "internal_checksums_verified": true,
+        "temporary_delivery_secrets_deleted": true
+      },
+      "environment_policy": "Fresh GitHub-hosted macOS VM; repository checkout used as source-only input; no environment dump retained.",
+      "case_observations": [
+        {
+          "case_id": "accept.basic_bind_001",
+          "class": "accept",
+          "source_path": "corpus/accept/basic_bind_001.tsubasa",
+          "source_sha256": "51ba55096285793d8ece7edc100993b13e70f007fc6ec0f8b7c3c7047011dad9",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/accept/basic_bind_001.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+            "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+            "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "accept.basic_bind_002",
+          "class": "accept",
+          "source_path": "corpus/accept/basic_bind_002.tsubasa",
+          "source_sha256": "a74a3d09e68c27bb25968dc9ad3ada3b351ec31491096a2936232815ff79e558",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/accept/basic_bind_002.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "1764c15e07d8409e0bd08ad2cd834e83b9dfc9e7a05f24015731fc6c427587af",
+            "base64": "Q0FOT046CmJpbmQoSUQoeSksIERFQygyKSwgSUQoeSkpCgpIQVNIOgozNzIwNTIzM2EwZmZmYzI1OTJmYTNjYzM4NTM1NmIxMGQxM2U3M2FmMzMzMmRkNzViZTAxYTI5NGU3MWI5Yzc5Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(y), DEC(2), ID(y))\n\nHASH:\n37205233a0fffc2592fa3cc385356b10d13e73af3332dd75be01a294e71b9c79\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(y), DEC(2), ID(y))",
+            "compatibility_identity": "37205233a0fffc2592fa3cc385356b10d13e73af3332dd75be01a294e71b9c79",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "accept.atomic_sequence_001",
+          "class": "accept",
+          "source_path": "corpus/accept/atomic_sequence_001.tsubasa",
+          "source_sha256": "1456e66228d31ad6c0697fa3b7d36b386d1364abd753ec6b42def02c3a43a249",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/accept/atomic_sequence_001.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 141,
+            "sha256": "6d6f48e615e82da2122fdc2356eeb224a5861a42e6b89853695a857fd360df06",
+            "base64": "Q0FOT046CnNlcShbYmluZChJRCh4KSwgREVDKDEpLCBJRCh4KSksIGJpbmQoSUQoeSksIERFQygyKSwgSUQoeSkpXSkKCkhBU0g6Cjc1NmE3ODg5YTk1OGIzOTRjMWY3M2U5OWM3ODg2YjVjM2NjZjM5ZmZlNGMzODkyY2Q1ODBkNjhkMDFjZWZhOTYK",
+            "escaped_utf8": "CANON:\nseq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])\n\nHASH:\n756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "seq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])",
+            "compatibility_identity": "756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "reject.invented_syntax_001",
+          "class": "reject",
+          "source_path": "corpus/reject/invented_syntax_001.tsubasa",
+          "source_sha256": "22345fd0a07821a4915ab61a551a5466ecfe147f192ada48e8026cf9983d5e92",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/reject/invented_syntax_001.tsubasa"
+          ],
+          "exit_code": 1,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 57,
+            "sha256": "413d4105258014530535f488497ec3dbcdf8ff3651a4233fd01872899107d560",
+            "base64": "RXJyb3I6IEUwMjM6IGV4cGVjdGVkIGlkZW50aWZpZXIgYWZ0ZXIgJ2xldCcgKHNwYW4gMy4uNCkK",
+            "escaped_utf8": "Error: E023: expected identifier after 'let' (span 3..4)\n"
+          },
+          "parsed": {
+            "canonical_ascii": null,
+            "compatibility_identity": null,
+            "diagnostic": {
+              "code": "E023",
+              "message": "expected identifier after 'let'",
+              "span": {
+                "start": 3,
+                "end": 4
+              }
+            }
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "diagnostic.code",
+              "diagnostic.message",
+              "diagnostic.span",
+              "empty_stdout_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "reject.malformed_decimal_001",
+          "class": "reject",
+          "source_path": "corpus/reject/malformed_decimal_001.tsubasa",
+          "source_sha256": "1a62a2b19edf30adc13b4f977946aa0fc513b9444a6bae5b18429e0578cbd6fb",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/reject/malformed_decimal_001.tsubasa"
+          ],
+          "exit_code": 1,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 49,
+            "sha256": "6679ecbe768c51151945ceaad30323b614d5ccee93208c7ae47816d80502f1af",
+            "base64": "RXJyb3I6IEUwMTM6IGludmFsaWQgbnVtYmVyIGxpdGVyYWwgKHNwYW4gOC4uMTEpCg==",
+            "escaped_utf8": "Error: E013: invalid number literal (span 8..11)\n"
+          },
+          "parsed": {
+            "canonical_ascii": null,
+            "compatibility_identity": null,
+            "diagnostic": {
+              "code": "E013",
+              "message": "invalid number literal",
+              "span": {
+                "start": 8,
+                "end": 11
+              }
+            }
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "diagnostic.code",
+              "diagnostic.message",
+              "diagnostic.span",
+              "empty_stdout_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "equivalence.decimal_convergence.decimal_1",
+          "class": "equivalence",
+          "source_path": "corpus/equivalence/decimal_convergence/decimal_1.tsubasa",
+          "source_sha256": "51ba55096285793d8ece7edc100993b13e70f007fc6ec0f8b7c3c7047011dad9",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/equivalence/decimal_convergence/decimal_1.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+            "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+            "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "equivalence.decimal_convergence.decimal_1_0",
+          "class": "equivalence",
+          "source_path": "corpus/equivalence/decimal_convergence/decimal_1_0.tsubasa",
+          "source_sha256": "6c8503c11af114d7425bd8b44f4ad4c5dbfe70584cb14f306c220bde7614af2a",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/equivalence/decimal_convergence/decimal_1_0.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+            "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+            "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "equivalence.decimal_convergence.decimal_01_000",
+          "class": "equivalence",
+          "source_path": "corpus/equivalence/decimal_convergence/decimal_01_000.tsubasa",
+          "source_sha256": "e8231495a0074ff393376931b6443cad94a67c67b501b20b2a6bffff94e08f80",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/equivalence/decimal_convergence/decimal_01_000.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+            "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+            "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "equivalence.sequence_skin_convergence.semicolon",
+          "class": "equivalence",
+          "source_path": "corpus/equivalence/sequence_skin_convergence/semicolon.tsubasa",
+          "source_sha256": "1456e66228d31ad6c0697fa3b7d36b386d1364abd753ec6b42def02c3a43a249",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/equivalence/sequence_skin_convergence/semicolon.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 141,
+            "sha256": "6d6f48e615e82da2122fdc2356eeb224a5861a42e6b89853695a857fd360df06",
+            "base64": "Q0FOT046CnNlcShbYmluZChJRCh4KSwgREVDKDEpLCBJRCh4KSksIGJpbmQoSUQoeSksIERFQygyKSwgSUQoeSkpXSkKCkhBU0g6Cjc1NmE3ODg5YTk1OGIzOTRjMWY3M2U5OWM3ODg2YjVjM2NjZjM5ZmZlNGMzODkyY2Q1ODBkNjhkMDFjZWZhOTYK",
+            "escaped_utf8": "CANON:\nseq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])\n\nHASH:\n756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "seq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])",
+            "compatibility_identity": "756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "equivalence.sequence_skin_convergence.triangle",
+          "class": "equivalence",
+          "source_path": "corpus/equivalence/sequence_skin_convergence/triangle.tsubasa",
+          "source_sha256": "c93116cbe0927fb769894cb34da6e1bc5ee4e7c35f8775135f3e8e80c096c8a3",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/equivalence/sequence_skin_convergence/triangle.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 141,
+            "sha256": "6d6f48e615e82da2122fdc2356eeb224a5861a42e6b89853695a857fd360df06",
+            "base64": "Q0FOT046CnNlcShbYmluZChJRCh4KSwgREVDKDEpLCBJRCh4KSksIGJpbmQoSUQoeSksIERFQygyKSwgSUQoeSkpXSkKCkhBU0g6Cjc1NmE3ODg5YTk1OGIzOTRjMWY3M2U5OWM3ODg2YjVjM2NjZjM5ZmZlNGMzODkyY2Q1ODBkNjhkMDFjZWZhOTYK",
+            "escaped_utf8": "CANON:\nseq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])\n\nHASH:\n756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "seq([bind(ID(x), DEC(1), ID(x)), bind(ID(y), DEC(2), ID(y))])",
+            "compatibility_identity": "756a7889a958b394c1f73e99c7886b5c3ccf39ffe4c3892cd580d68d01cefa96",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "idempotence.basic_bind_001",
+          "class": "idempotence",
+          "source_path": "corpus/idempotence/basic_bind_001/source.tsubasa",
+          "source_sha256": "51ba55096285793d8ece7edc100993b13e70f007fc6ec0f8b7c3c7047011dad9",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/idempotence/basic_bind_001/source.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+            "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+            "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "RAW_BYTE_COMPARISON_NOT_AVAILABLE",
+            "reason": "Historical v0.1 case remains PENDING_REAL_TOBI_RUN; no verified Windows observation is promoted.",
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        },
+        {
+          "case_id": "determinism.basic_bind_001",
+          "class": "determinism",
+          "source_path": "corpus/determinism/basic_bind_001/source.tsubasa",
+          "source_sha256": "51ba55096285793d8ece7edc100993b13e70f007fc6ec0f8b7c3c7047011dad9",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/determinism/basic_bind_001/source.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+            "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+            "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+            "diagnostic": null
+          },
+          "windows_v0_1_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "canonical_ascii",
+              "compatibility_identity",
+              "empty_stderr_text"
+            ],
+            "differences": [],
+            "raw_process_byte_comparison": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+          },
+          "linux_v0_2_comparison": {
+            "classification": "MATCH",
+            "compared_fields": [
+              "exit_code",
+              "stdout.byte_length",
+              "stdout.sha256",
+              "stdout.utf8",
+              "stderr.byte_length",
+              "stderr.sha256",
+              "stderr.utf8",
+              "canonical_ascii",
+              "compatibility_identity",
+              "diagnostic"
+            ],
+            "raw_stdout_stderr_sha256": "MATCH",
+            "differences": []
+          }
+        }
+      ],
+      "comparison_summary": {
+        "windows_v0_1": {
+          "verified_baseline_cases": 11,
+          "match": 11,
+          "divergence_observed": 0,
+          "raw_process_bytes": "RAW_BYTE_COMPARISON_NOT_AVAILABLE"
+        },
+        "linux_v0_2": {
+          "verified_baseline_cases": 11,
+          "match": 11,
+          "divergence_observed": 0,
+          "raw_stdout_stderr_sha256_match": 11,
+          "all_12_primary_case_raw_stdout_stderr_sha256_match": 12
+        }
+      },
+      "determinism": {
+        "case_id": "determinism.basic_bind_001",
+        "source_path": "corpus/determinism/basic_bind_001/source.tsubasa",
+        "source_sha256": "51ba55096285793d8ece7edc100993b13e70f007fc6ec0f8b7c3c7047011dad9",
+        "repetitions": 3,
+        "result": "SAME_CONTEXT_BYTE_IDENTICAL",
+        "comparison_fields": [
+          "exit_code",
+          "stdout bytes",
+          "stderr bytes"
+        ],
+        "runs": [
+          {
+            "run": 1,
+            "command": [
+              "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+              "canon",
+              "corpus/determinism/basic_bind_001/source.tsubasa"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "encoding": "utf-8",
+              "byte_length": 106,
+              "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+              "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+              "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+            },
+            "stderr": {
+              "encoding": "utf-8",
+              "byte_length": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "base64": "",
+              "escaped_utf8": ""
+            },
+            "parsed": {
+              "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+              "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+              "diagnostic": null
+            },
+            "linux_v0_2_raw_comparison": "MATCH"
+          },
+          {
+            "run": 2,
+            "command": [
+              "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+              "canon",
+              "corpus/determinism/basic_bind_001/source.tsubasa"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "encoding": "utf-8",
+              "byte_length": 106,
+              "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+              "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+              "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+            },
+            "stderr": {
+              "encoding": "utf-8",
+              "byte_length": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "base64": "",
+              "escaped_utf8": ""
+            },
+            "parsed": {
+              "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+              "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+              "diagnostic": null
+            },
+            "linux_v0_2_raw_comparison": "MATCH"
+          },
+          {
+            "run": 3,
+            "command": [
+              "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+              "canon",
+              "corpus/determinism/basic_bind_001/source.tsubasa"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "encoding": "utf-8",
+              "byte_length": 106,
+              "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+              "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+              "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+            },
+            "stderr": {
+              "encoding": "utf-8",
+              "byte_length": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "base64": "",
+              "escaped_utf8": ""
+            },
+            "parsed": {
+              "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+              "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+              "diagnostic": null
+            },
+            "linux_v0_2_raw_comparison": "MATCH"
+          }
+        ],
+        "linux_v0_2_raw_match_repetitions": 3
+      },
+      "idempotence": {
+        "case_id": "idempotence.basic_bind_001",
+        "result": "NON_IDEMPOTENT_REINPUT_OBSERVED",
+        "first_authored_source_run": {
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "corpus/idempotence/basic_bind_001/source.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 106,
+            "sha256": "508f65205d3f929432adfc2520bf30d29dcb8749c3cc6f9a2681139cccb3cf1e",
+            "base64": "Q0FOT046CmJpbmQoSUQoeCksIERFQygxKSwgSUQoeCkpCgpIQVNIOgo4NTI5YzI4NzE1ZDA3MDY5ZmUxMzVkZGUwN2VkNzNkYjQ5ZmE2OTBkNWY3YjE4NzRkZWE0Nzc2MGYzMzIxZjA2Cg==",
+            "escaped_utf8": "CANON:\nbind(ID(x), DEC(1), ID(x))\n\nHASH:\n8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "bind(ID(x), DEC(1), ID(x))",
+            "compatibility_identity": "8529c28715d07069fe135dde07ed73db49fa690d5f7b1874dea47760f3321f06",
+            "diagnostic": null
+          }
+        },
+        "second_canonical_reinput_run": {
+          "source_path": "/var/folders/g3/pffjr_y96bq06blnkf72x_hw0000gn/T/tobi-v02-idempotence-hwfsi2y0/canonical-reinput.tsubasa",
+          "command": [
+            "/Users/runner/work/_temp/tobi-v02-macos-evidence/release/stage1-tobi-validator-v0.7.0-macos-arm64/tobi",
+            "canon",
+            "/var/folders/g3/pffjr_y96bq06blnkf72x_hw0000gn/T/tobi-v02-idempotence-hwfsi2y0/canonical-reinput.tsubasa"
+          ],
+          "exit_code": 0,
+          "stdout": {
+            "encoding": "utf-8",
+            "byte_length": 167,
+            "sha256": "a5eaf0fbb63b6bdeed8dcd65cb3a4f31595ec1ab7dda7509a497acb8ff1c481a",
+            "base64": "Q0FOT046CkNBTEwoSUQoYmluZCksIFtDQUxMKElEKElEKSwgW0lEKHgpXSksIENBTEwoSUQoREVDKSwgW0RFQygxKV0pLCBDQUxMKElEKElEKSwgW0lEKHgpXSldKQoKSEFTSDoKOTVlNjk1YzM5NDUxOTk4NGRjODM0N2FlNjE3NmQxZjY3NTg1MTI2YWEwOGFlMTE2YjRjOTE5NDgwMGQxNzcxMAo=",
+            "escaped_utf8": "CANON:\nCALL(ID(bind), [CALL(ID(ID), [ID(x)]), CALL(ID(DEC), [DEC(1)]), CALL(ID(ID), [ID(x)])])\n\nHASH:\n95e695c394519984dc8347ae6176d1f67585126aa08ae116b4c9194800d17710\n"
+          },
+          "stderr": {
+            "encoding": "utf-8",
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "base64": "",
+            "escaped_utf8": ""
+          },
+          "parsed": {
+            "canonical_ascii": "CALL(ID(bind), [CALL(ID(ID), [ID(x)]), CALL(ID(DEC), [DEC(1)]), CALL(ID(ID), [ID(x)])])",
+            "compatibility_identity": "95e695c394519984dc8347ae6176d1f67585126aa08ae116b4c9194800d17710",
+            "diagnostic": null
+          },
+          "transient_source_utf8": "bind(ID(x), DEC(1), ID(x))",
+          "transient_source_utf8_base64": "YmluZChJRCh4KSwgREVDKDEpLCBJRCh4KSk="
+        },
+        "transient_file_deleted": true,
+        "linux_v0_2_first_run_raw_comparison": "MATCH",
+        "linux_v0_2_second_run_raw_comparison": "MATCH"
+      }
     }
   ],
   "windows_linux_summary": {
@@ -213,5 +1162,20 @@
     "match": 11,
     "divergence_observed": 0,
     "overall_verdict": "LINUX_EVIDENCE_COMPLETE_ALL_MATCH"
+  },
+  "macos_summary": {
+    "macos_cases_executed": 12,
+    "windows_verified_baseline_cases": 11,
+    "windows_match": 11,
+    "windows_divergence_observed": 0,
+    "linux_verified_baseline_cases": 11,
+    "linux_match": 11,
+    "linux_divergence_observed": 0,
+    "raw_linux_macos_stdout_stderr_sha256_match": 11,
+    "all_12_primary_linux_macos_raw_outputs_match": 12,
+    "determinism_repetitions": 3,
+    "determinism_result": "SAME_CONTEXT_BYTE_IDENTICAL",
+    "idempotence_result": "NON_IDEMPOTENT_REINPUT_OBSERVED",
+    "overall_verdict": "MACOS_EVIDENCE_COMPLETE_ALL_MATCH"
   }
 }
