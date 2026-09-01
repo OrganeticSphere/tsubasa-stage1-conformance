@@ -27,7 +27,3 @@ No. Validator acceptance is not consensus.
 ## Can I add broader language examples?
 
 Not in v0.1 unless they are public-safe, `.tsubasa`, and verified through real Tobi runs.
-
-## Who owns this repository?
-
-AI Verification PM owns it. Tobi Compiler / Architect verifies technical outputs when needed.
