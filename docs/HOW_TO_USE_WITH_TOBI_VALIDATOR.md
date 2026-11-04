@@ -2,7 +2,17 @@
 
 This repository does not include Tobi Validator.
 
-Use an authorized Tobi Validator distribution or public CI wrapper according to the current evaluation access flow.
+Use the free public Action or download a platform bundle and SHA-256 sidecar
+from [Tobi Validator Releases](https://github.com/OrganeticSphere/tobi-validator/releases/tag/stage1-tobi-validator-v0.7.0).
+No registration, access token, or repository secret is required.
+
+```yaml
+- uses: actions/checkout@v4
+- uses: OrganeticSphere/tobi-validator@v2
+  with:
+    mode: canon
+    canon_input: corpus/accept/basic_bind_001.tsubasa
+```
 
 ## Structure checks
 
@@ -46,4 +56,5 @@ only when exact command evidence is recorded.
 
 The public Tobi Validator wrapper repository should link to this corpus as the open conformance/reference example set.
 
-This repository should link users back to the public wrapper and evaluation access flow for controlled execution.
+The public wrapper and public release binaries provide free execution. The
+validator implementation remains private.

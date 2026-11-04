@@ -192,7 +192,7 @@ Future coverage expansion requires public-safety classification, real Tobi runs,
    python tools/run_structure_checks.py
    ```
 
-5. Use authorized Tobi Validator access to reproduce or extend verification runs.
+5. Use the free Tobi Validator Action or public release binaries to reproduce or extend verification runs.
 6. Update `corpus/manifest.v0.1.json` only from real command output.
 
 See [`docs/HOW_TO_USE_WITH_TOBI_VALIDATOR.md`](docs/HOW_TO_USE_WITH_TOBI_VALIDATOR.md).
@@ -205,11 +205,11 @@ Tobi Validator is Organetic's Reasoning Artifact Validator. This repository is n
 
 Authorized users may run Tobi Validator against the public examples and compare results with the recorded expected-output evidence.
 
-The private validator implementation, controlled binary distribution, private fixtures, and private golden corpus remain outside this repository.
+The private validator implementation, private fixtures, and private golden corpus remain outside this repository. Public binaries are available from the Tobi Validator GitHub Releases.
 
 ## Relationship to the public GitHub Action
 
-The public [`OrganeticSphere/tobi-validator`](https://github.com/OrganeticSphere/tobi-validator) repository provides the Tobi Validator GitHub Action wrapper, adoption documentation, examples, and controlled evaluation-access path.
+The public [`OrganeticSphere/tobi-validator`](https://github.com/OrganeticSphere/tobi-validator) repository provides the Tobi Validator GitHub Action wrapper, adoption documentation, examples, and free execution without registration or repository secrets.
 
 This repository provides open conformance examples and verification evidence.
 
@@ -222,14 +222,14 @@ public .tsubasa examples
 → public expected-output evidence
 ```
 
-Execution still requires authorized Tobi Validator access.
+Execution is freely available through `OrganeticSphere/tobi-validator@v2` or public release binaries. No registration or repository secrets are needed.
 
 Useful public links:
 
 - [Tobi Validator](https://github.com/OrganeticSphere/tobi-validator)
 - [Organetic documentation](https://organetic.ai/docs.html)
 - [Tsubasa conformance documentation](https://organetic.ai/docs-tsubasa-conformance.html)
-- [Evaluation access](https://organetic.ai/eval-access.html)
+- [Public validator binaries](https://github.com/OrganeticSphere/tobi-validator/releases/tag/stage1-tobi-validator-v0.7.0)
 - [GitHub Actions guide](https://organetic.ai/docs-github-actions.html)
 - [GitLab CI/CD component guide](https://organetic.ai/docs-gitlab-component.html)
 

@@ -11,13 +11,13 @@ public source examples + manifest + expected-output discipline
 Public Tobi Validator wrapper repository:
 
 ```text
-how users run authorized Tobi checks in CI
+how users run free Tobi checks in CI without repository secrets
 ```
 
-Evaluation access flow:
+Public binary releases:
 
 ```text
-how external users request controlled execution access
+platform bundles and SHA-256 sidecars for free local or GitHub Action execution
 ```
 
 ## Required cross-links after repository creation
@@ -26,7 +26,7 @@ Add links from this repository to:
 
 - public Tobi Validator wrapper repository;
 - Organetic documentation hub;
-- evaluation access page;
+- [public release binaries](https://github.com/OrganeticSphere/tobi-validator/releases/tag/stage1-tobi-validator-v0.7.0);
 - GitHub Actions documentation page;
 - GitLab CI/CD component documentation page.
 
@@ -42,7 +42,7 @@ Use:
 
 ```text
 public conformance corpus
-controlled validator execution
+free validator execution without registration or repository secrets
 public wrapper, private implementation
 ```
 
