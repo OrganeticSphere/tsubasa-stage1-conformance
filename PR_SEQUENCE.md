@@ -39,7 +39,7 @@ Stabilize v0.1 suite classes after verified output evidence exists.
 
 ## PR 8 — Handshake with public Tobi Validator docs
 
-Completed: cross-link this repository with the public Tobi Validator wrapper/docs and evaluation access flow.
+Completed: cross-link this repository with the public Tobi Validator wrapper/docs and free GitHub Action execution.
 
 ## PR 9 — v0.1 release candidate
 
